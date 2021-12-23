@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     ndkVersion '22.1.7171670'
 
     defaultConfig.with {
         applicationId 'com.example.plasma'
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 30
     }
     buildTypes {
         release {
@@ -22,4 +23,10 @@ android {
             path 'src/main/cpp/CMakeLists.txt'
         }
     }
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
 }
